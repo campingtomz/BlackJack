@@ -116,11 +116,6 @@
        
         $(".next").show();
         this.displayScores();    }
-    checkGameOver() {
-        if (this.players.lenght = 0) {
-            this.gameOver = true;
-        }
-    }
     checkDealerEndTurn() {
         let bestPlayerScore = this.getBestPlayerScore();
         this.dealer.checkScore();
@@ -211,9 +206,9 @@
     }  
     startRound() {
         this.clearPlayersHand();
+        this.checkDeckSize();
         $('.playerBtn').prop('disabled', false);
         $(".next").hide();
-
         for (let index = 0; index < 2; index++) {
             for (let player of this.players) {
                 player.addToHand(this.mainDeck.drawCard());
