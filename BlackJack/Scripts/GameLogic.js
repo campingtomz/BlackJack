@@ -156,6 +156,8 @@
     initilizeGame() {
         this.initilizePlayers(1);
         this.mainDeck.shuffleDeck();
+        $(".hit").show();
+        $(".hold").show();
     }
     initilizePlayers(playersCount) {
         for (let index = 0; index < playersCount; index++) {
